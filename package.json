@@ -1,8 +1,8 @@
 {
-  "name": "sockjs-echo",
-  "version": "0.0.0-unreleasable",
-  "dependencies": {
-          "express": "4.13.3",
-          "sockjs": "*"
-  }
+    "name": "sockjs-echo",
+    "version": "0.0.0-unreleasable",
+    "dependencies": {
+        "express": "4.13.3",
+        "sockjs": "*"
+    }
 }

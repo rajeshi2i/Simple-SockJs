@@ -1,0 +1,17 @@
+{
+  "name": "Simple-SockJs",
+  "version": "0.0.0",
+  "homepage": "https://github.com/RAJESHI2IT/Simple-SockJs",
+  "authors": [
+    "RAJESHI2IT <rajesh.ideas2it@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

@@ -1,0 +1,38 @@
+#chat-content {
+    background-color: #FAFAFA;
+    margin-top: 50px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#chat-content div{
+    background-color: #FFF;
+    margin: 10px;
+    border:1px solid #eee;
+}
+
+#chat-content div .username{
+    color: #311B92;
+    padding-right: 5px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #eee;
+}
+
+#chat-content div .msg{
+    padding: 10px;
+}
+
+.top-head {
+    background-color: #673AB7;
+}
+
+.top-head.navbar-default .navbar-brand{
+	color: #FFF;
+}
+
+.send-icon {
+    color: #311B92;
+    text-align:center;
+    font-size: 20px;
+}

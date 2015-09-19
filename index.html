@@ -4,16 +4,38 @@
 <head>
     <meta charset="UTF-8" />
     <title>Sock chat</title>
-    <script src="lib/js/jquery-1.11.0.min.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"></link>
+    <link href="lib/css/style.css" rel="stylesheet"></link>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="lib/js/sockjs.min.js"></script>
+    <script src="lib/js/index.js"></script>
 </head>
 
 <body>
-    <textarea id="chat-content" style="width:500px;height:300px"></textarea>
-    <br/>
-    <input type="text" id="username" placeholder="Choose username" />
-    <input type="text" id="message" placeholder="Enter chat message" />
-    <input type="button" value="Send" onclick="sendMessage()" />
-    <script src="lib/js/index.js"></script>
+    <nav class="navbar navbar-default navbar-fixed-top top-head">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> Simple SockJS </a>
+            </div>
+        </div>
+    </nav>
+    <div id="chat-content"></div>
+    <nav class="navbar navbar-default navbar-fixed-bottom bottom-head">
+        <div class="container-fluid">
+            <div class="row" style="margin-top: 12px;">
+            <div class="col-xs-3">
+                <input class="col-xs-12" type="text" id="username" placeholder="Choose username" />
+            </div>
+            <div class="col-xs-8">
+                <input class="col-xs-12" type="text" id="message" placeholder="Enter chat message" />
+            </div>
+            <div class="col-xs-1 send-icon" onclick="sendMessage()">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            </div>
+            </div>
+        </div>
+    </nav>
 </body>
+
 </html>
