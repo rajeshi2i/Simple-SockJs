@@ -1,6 +1,10 @@
-var express = require('express');
-var http = require('http');
-var sockjs = require('sockjs');
+var express        = require('express');
+var http           = require('http');
+var sockjs         = require('sockjs');
+var morgan         = require('morgan');
+var bodyParser     = require('body-parser');
+var methodOverride = require('method-override');
+var mongoose       = require("mongoose");
 
 // Clients list
 var clients = {};
@@ -38,11 +42,29 @@ echo.on('connection', function(conn) {
 
 // Express server
 var app = express();
+
+app.use(express.static(__dirname + '/public')); // set the static files location
+app.use(morgan('dev')); // log every request to the console
+app.use(bodyParser()); // pull information from html in POST
+app.use(methodOverride()); // simulate DELETE and PUT
+
+//Add the routes
+routes = require('./routes/chat')(app);
+
 // Create an http server
 var server = http.createServer(app);
 
 // Integrate SockJS and listen on /echo
 echo.installHandlers(server, {prefix:'/echo'});
+
+// MongoDB configuration
+mongoose.connect('mongodb://localhost/chat', function(err, res) {
+  if(err) {
+    console.log('error connecting to MongoDB Database. ' + err);
+  } else {
+    console.log('Connected to Database');
+  }
+});
 
 // Start server
 app.set('port', (process.env.PORT || 5000));
